@@ -1,0 +1,51 @@
+﻿@using lensLook.Bll
+
+@model BookingCreateVm
+@{
+    Layout = "_LayoutWithAuth";
+}
+<link href="~/css/home appointment.css" rel="stylesheet" />
+    <div class="container ">
+        <h1 class="mb-5">In-Home Doctor Appointment</h1>
+    <form asp-action="offline" asp-controller="Booking" method="post">
+            <div class="row mb-3">
+                <label for="name" class="col-sm-2 col-form-label">Full Name:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" asp-for="FullName" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="phone" class="col-sm-2 col-form-label">Phone Number:</label>
+                <div class="col-sm-10">
+                <input type="tel" class="form-control" asp-for="PhoneNumber"  required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="email" class="col-sm-2 col-form-label">Email Address:</label>
+                <div class="col-sm-10">
+                <input type="email" class="form-control" asp-for="Email">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="address" class="col-sm-2 col-form-label">Home Address:</label>
+                <div class="col-sm-10">
+                <textarea class="form-control" asp-for="HomeAddres" rows="3" required></textarea>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="date" class="col-sm-2 col-form-label">Preferred Date:</label>
+                <div class="col-sm-10">
+                <input type="date" class="form-control" asp-for="AppointmentDate"  required>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="reason" class="col-sm-2 col-form-label">Reason for Visit:</label>
+                <div class="col-sm-10">
+                <textarea class="form-control" asp-for="Reason" required></textarea>
+                </div>
+            </div>
+            <button type="submit" class="btn main-btn">Submit Appointment Request</button>
+        </form>
+    </div>
+

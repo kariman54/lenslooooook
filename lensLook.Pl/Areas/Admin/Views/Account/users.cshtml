@@ -1,0 +1,147 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+@model List<user>
+
+
+
+
+
+@section ScriptCss{
+    <link rel="stylesheet" href="~/dashboard/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="~/dashboard/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+<link rel="stylesheet" href="~/dashboard/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+
+
+}
+
+
+<!-- /.card -->
+
+<div class="card">
+    <div class="card-header ">
+        <h3 class="card-title">DataTable Users</h3>
+
+    </div>
+
+    <div class="d-flex p-2 justify-content-between">
+        <a class="btn btn-primary" asp-area="admin" asp-action="RegisterNewPatient" asp-controller="account">Create New Account Patient</a>
+        <a class="btn btn-success" asp-area="admin" asp-action="RegisterNewDoctor" asp-controller="account">Create New Account Doctor</a>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>RoleName</th>
+                    <th>Delete</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.DisplayName</td>
+                        <td>@item.Email</td>
+                        <td>
+
+                            @if (@item.RoleName == "Patient")
+                            {
+                                <button type="button" class="btn btn-block bg-gradient-primary btn-sm">@item.RoleName</button>
+                            }
+                            else if (@item.RoleName == "Doctor")
+                            {
+                                <button type="button" class="btn btn-block bg-gradient-warning btn-sm">@item.RoleName</button>
+
+                            }
+                            else
+                            {
+                                <button type="button" class="btn btn-block bg-gradient-info btn-sm">@item.RoleName</button>
+
+                            }
+
+
+                        </td>
+                        <td>
+                            <a class="btn btn-block bg-gradient-danger btn-xs" asp-action="DeleteUser" asp-controller="account" asp-area="admin" asp-route-id="@item.Id">Delete</a>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>
+<!-- /.card -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@section ScriptES6{
+
+
+    <script src="~/dashboard/plugins/jquery/jquery.min.js"></script>
+
+    <script src="~/dashboard/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/dashboard/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/dashboard/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="~/dashboard/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="~/dashboard/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="~/dashboard/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="~/dashboard/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+    <script src="~/dashboard/plugins/jszip/jszip.min.js"></script>
+    <script src="~/dashboard/plugins/pdfmake/pdfmake.min.js"></script>
+    <script src="~/dashboard/plugins/pdfmake/vfs_fonts.js"></script>
+    <script src="~/dashboard/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+    <script src="~/dashboard/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+    <script src="~/dashboard/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
+    <script src="~/dashboard/dist/js/adminlte.min.js?v=3.2.0"></script>
+
+    <script src="~/dashboard/dist/js/demo.js"></script>
+
+    <script>
+        $(function () {
+            $("#example1").DataTable({
+                "responsive": true, "lengthChange": false, "autoWidth": false,
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
+        });
+    </script>
+}

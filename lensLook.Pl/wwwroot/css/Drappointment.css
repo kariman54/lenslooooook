@@ -1,0 +1,62 @@
+﻿:root {
+    --myblue: #033373;
+    --mylight: #17b8da;
+    --mywhite: white;
+    --mylightblue: #03347310;
+    --mydoctorblue: #03347377;
+    --transition: 0.3s ease-in-out;
+    --animation: left_right 2s ease-in-out;
+    --bottom_up: bottomUp 2s ease-in-out forwards;
+    --left_right: left_right 2s ease-in-out forwards;
+    --my_shadow: 0px 0px 15px -5px var(--mylight);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+.orders-container {
+    max-width: 1000px;
+    background-color: var(--myblue);
+    padding: 30px;
+}
+
+.head {
+    margin-bottom: 20px;
+    color: var(--mywhite);
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    background-color: var(--mywhite);
+    padding: 20px;
+    color: var(--myblue);
+    margin-bottom: 20px;
+    box-shadow: var(--my_shadow);
+}
+
+.content-details p {
+    display: inline-block;
+    margin: 0px 10px 0px 0px;
+    color: var(--mylight);
+}
+
+@media (max-width: 768px) {
+    .content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .content-buttons {
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
+
+.show-table-btn {
+    background-color: var(--mywhite);
+    color: var(--myblue);
+}

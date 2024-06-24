@@ -1,0 +1,100 @@
+﻿@{
+    ViewData["Title"] = "About Us";
+    if (User.Identity.IsAuthenticated)
+    {
+
+        Layout = "_LayoutWithAuth";
+    }
+    else
+    {
+        Layout = "_Layout";
+
+    }
+}
+
+
+<section class="landing container-fluid p-0 d-grid position-relative align-items-center">
+    <img src="~/photos/about_us.jpg" alt="About us" class="img-fluid position-absolute" />
+    <div class="overlay display-flex align-items-center justify-content-center opacity-50">
+        <h3>About us</h3>
+    </div>
+</section>
+
+<section class="about_parent" style="margin-top: 100px; color: var(--mylight)">
+    <div class="container">
+        <div class="row">
+            <div class="left col-md-6 d-flex">
+                <div class="big-img position-relative">
+                    <img src="~/photos/right div.jpg" alt="About Us Image" class="img-fluid"
+                         style="border-radius: 10px; width: 550px; height: 604px" />
+                    <div class="small_div position-absolute d-flex justify-content-center align-items-center text-white">
+                        <div class="about_container_about" style="padding: 10px">
+                            <span id="about">0</span>
+                            <span class="plus">+</span>
+                            <p class="mb-0 fs-4">Years of Experience</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <h5>About Us</h5>
+                <h1 class="abouth1" style="color: var(--myblue)">
+                    Best Optometrist & Eye Care That You Can Trust
+                </h1>
+                <div class="right_group row row-cols-1 row-cols-md-2 gx-4 gy-3">
+                    <div class="right-row-1 col">
+                        <i class="fa-solid fa-eye fs-3" style="color: var(--myblue)"></i>
+                        <h4 class="d-inline ms-2" style="color: var(--myblue)">
+                            Our Vision
+                        </h4>
+                        <p>
+                            Pioneering a paradigm shift in eye care, 
+                            by creating a world where personalized and advanced eye health solutions are at everyone's doorstep.
+                        </p>
+                    </div>
+                    <div class="right-row-2 col">
+                        <i class="fa-solid fa-toggle-on fs-3" style="color: var(--myblue)"></i>
+                        <h4 class="d-inline ms-2" style="color: var(--myblue)">
+                            Our Mission
+                        </h4>
+                        <p>
+                            At LensLook, we seamlessly connect clients with every aspect of eye care,
+                            from initial home examinations and easy booking to the delivery of your eyewear right to your doorstep.
+                            
+                        </p>
+                    </div>
+                    <div class="col">
+                        <i class="fa-brands fa-gratipay fs-3" style="color: var(--myblue)"></i>
+                        <h4 class="d-inline ms-2" style="color: var(--myblue)">
+                            Why Us?
+                        </h4>
+                        <ol>
+                            <li>
+                                Easy access to eye care services.
+                            </li>
+                            <li>
+                                Saving time and money.
+                            </li>
+                            <li>
+                                Improving the quality of service.
+                            </li>
+                            <li>
+                                Providing more choices for consumers.
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="col">
+                        <i class="fa-solid fa-chart-line fs-3" style="color: var(--myblue)"></i>
+                        <h4 class="d-inline ms-2" style="color: var(--myblue)">
+                            Persuasive Content
+                        </h4>
+                        <p>
+                            Exploring the possibility of expanding the scope of services provided
+                            to include other eye care-related medical services.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,100 @@
+﻿:root {
+    --myblue: #033373;
+    --mylight: #17b8da;
+    --mywhite: white;
+    --transition: 0.3s ease-in-out;
+    --animation: left_right 2s ease-in-out;
+    --bottom_up: bottomUp 2s ease-in-out forwards;
+    --left_right: left_right 2s ease-in-out forwards;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+.serv_parent {
+    margin-top: 100px;
+    margin-bottom: 200px;
+}
+
+.card-text {
+    color: var(--mytextblack); /* Assuming you have this color variable */
+}
+
+.card-body .main-btn {
+    width: 100%;
+    margin-left: 0px;
+    font-size: 20px;
+}
+
+.serv_parent > h3 {
+    color: var(--mylight);
+    animation: var(--left_right);
+}
+
+@keyframes left_right {
+    100% {
+        transform: translatex(0%);
+        -webkit-transform: translatex(0%);
+        -moz-transform: translatex(0%);
+        -ms-transform: translatex(0%);
+        -o-transform: translatex(0%);
+    }
+
+    0% {
+        transform: translatex(100%);
+        -webkit-transform: translatex(100%);
+        -moz-transform: translatex(100%);
+        -ms-transform: translatex(100%);
+        -o-transform: translatex(100%);
+    }
+}
+
+.col-md-5 > h1 {
+    color: var(--myblue);
+}
+
+.col-md-6 > p {
+    color: var(--myblue);
+}
+
+.my-card-hover {
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0.7;
+    transform: scaley(0.9) scale(0.83);
+}
+
+    .my-card-hover:hover {
+        opacity: 1;
+        box-shadow: 0 8px 16px var(--myblue);
+    }
+
+.card-group {
+    margin-top: -30px;
+    animation: var(--bottom_up);
+    -webkit-animation: var(--bottom_up);
+}
+
+.card-body h5 {
+    font-size: 40px;
+    color: var(--myblue);
+}
+
+.card-body p {
+    font-size: 20px;
+    color: var(--mylight);
+}
+
+@keyframes bottomUp {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}

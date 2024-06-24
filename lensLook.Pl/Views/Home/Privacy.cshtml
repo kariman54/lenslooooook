@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+
+    if (User.Identity.IsAuthenticated)
+    {
+
+        Layout = "_LayoutWithAuth";
+    }
+    else
+    {
+        Layout = "_Layout";
+
+    }
+
+
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to detail your site's privacy policy.</p>

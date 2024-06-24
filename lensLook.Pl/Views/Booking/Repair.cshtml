@@ -1,0 +1,57 @@
+﻿@using lensLook.Bll
+
+@model BookingCreateVm
+@{
+    Layout = "_LayoutWithAuth";
+}
+@inject IServicesRepo servicesReop;
+
+<link href="~/css/repair.css" rel="stylesheet" />
+
+    <div class="container ">
+        <h1 class="mb-5">Glasses Repair Appointment</h1>
+        <form id="glassesRepairForm" asp-action="repair" asp-controller="Booking" method="post">
+            <div class="row mb-3">
+                <label for="fullName" class="col-sm-2 col-form-label">Full Name:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" asp-for="FullName" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="contactNumber" class="col-sm-2 col-form-label">Phone Number:</label>
+                <div class="col-sm-10">
+                <input type="tel" class="form-control" asp-for="PhoneNumber" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="emailAddress" class="col-sm-2 col-form-label">Email Address:</label>
+                <div class="col-sm-10">
+                <input type="email" class="form-control" asp-for="Email">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="homeAddress" class="col-sm-2 col-form-label">Home Address:</label>
+                <div class="col-sm-10">
+                <textarea class="form-control" asp-for="HomeAddres" rows="3" required></textarea>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="preferredTime" class="col-sm-2 col-form-label">Preferred Time (optional):</label>
+                <div class="col-sm-10">
+                <input type="datetime-local" class="form-control" asp-for="AppointmentDate">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="repairReason" class="col-sm-2 col-form-label">Reason for Repair:</label>
+                <div class="col-sm-10">
+                <textarea class="form-control" asp-for="Reason" rows="5" required></textarea>
+                </div>
+            </div>
+            <button type="submit" class="btn main-btn">Submit Repair Request</button>
+        </form>
+    </div>
+
+
+
+

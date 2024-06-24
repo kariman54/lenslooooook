@@ -1,0 +1,81 @@
+﻿@model List<Booking>
+
+
+@{
+
+
+    Layout = "_LayoutWithAuth";
+}
+   
+@section Linkedcss{
+
+    <style>
+        .container {
+            width: 95% !important;
+            max-width: none !important;
+        }
+    </style>
+}
+
+
+@if (Model.Count > 0)
+{
+    <div class="container">
+
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th>Name Persone</th>
+                    <th>Email</th>
+                    <th>PhoneNumber</th>
+                    <th>Address</th>
+                    <th>Date Request</th>
+                    <th>Scheduled medical examination date </th>
+                    <th>reason</th>
+                    <th>Status</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+                @{
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.FullName</td>
+                            <td>@item.Email</td>
+                            <td>@item.PhoneNumber</td>
+                            <td>@item.HomeAddres</td>
+                            <td>@item.RequestDate</td>
+                            <td>@item.AppointmentDate</td>
+                            <td>@item.Reason</td>
+
+                            @switch (@item.Status)
+                            {
+                                case BookingStatus.Pending:
+                                    <td><span class="badge bg-warning">pending</span></td>
+                                    break;
+
+                                case BookingStatus.Rejected:
+                                    <td><span class="badge bg-danger">Rejected</span></td>
+                                    break;
+
+
+
+                                default:
+                                    <td> <span class="badge bg-success">Success</span></td>
+                                    break;
+
+                            }
+
+
+
+
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+}

@@ -1,0 +1,92 @@
+﻿@model Booking
+
+
+@{
+    var AllDoctor=  _Usermanager.Users.Where(x=>x.RoleName=="Doctor");
+    var AllDoctorListItems = new SelectList(AllDoctor, "Id", "DisplayName");
+}   
+
+
+
+
+<div class="container doc_regester">
+    <h1 class="mb-5"> Start to Choose Doctor For Booking</h1>
+    <form asp-action="ChooseDoctorForAppointment" asp-controller="Appointment" asp-area="admin" method="post" id="doctorRegistrationForm" enctype="multipart/form-data">
+
+
+        <div>
+            <input hidden asp-for="@Model.BookingId" />
+        </div>
+        <div asp-validation-summary="All" class="text-danger">
+        </div>
+
+
+        <div class="row mb-3">
+            <label asp-for="FullName" class="col-sm-2 col-form-label"> Name:</label>
+            <div class="col-sm-9">
+                <input asp-for="FullName" class="form-control" readonly />
+
+            </div>
+        </div>
+
+
+
+        <div class="row mb-3">
+            <label asp-for="PhoneNumber" class="col-sm-2 col-form-label">PhoneNumber</label>
+            <div class="col-sm-9">
+                <input asp-for="PhoneNumber" class="form-control" readonly />
+            </div>
+        </div>
+
+
+
+
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-9">
+                <input asp-for="Email"
+                       class="form-control" readonly />
+            </div>
+        </div>
+
+
+
+
+
+        <div class="row mb-3">
+            <label asp-for="RequestDate" class="col-sm-2 col-form-label">Color</label>
+            <div class="col-sm-9">
+                <input asp-for="RequestDate"
+                       class="form-control"
+                       readonly />
+            </div>
+        </div>
+
+
+
+
+        <div class="row mb-3">
+            <label asp-for="DoctorId" class="col-sm-2 col-form-label">Doctor</label>
+            <div class="col-sm-9">
+
+                <div>
+                    <select asp-for="DoctorId" asp-items="AllDoctorListItems" class="form-control">
+                        <option value="@null">NOT Choose Doctor yet</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <button type="submit" class="btn btn-primary">Done</button>
+    </form>
+</div>
+

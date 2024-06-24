@@ -1,0 +1,147 @@
+﻿@model ModelLoginAndRegister
+@{
+    ViewData["Title"] = "DoctorRegestratoin";
+ 
+}
+@{
+    Layout = "_Layout";
+}
+    <link rel="stylesheet" href="~/css/JoinAsDoctor.css" />
+
+<!-- join as a doctor -->
+<div class="container doc_regester">
+    <h1 class="mb-5">Doctor Registration</h1>
+    <form asp-action="DoctorRegestratoin" asp-controller="account" method="post" id="doctorRegistrationForm" enctype="multipart/form-data">
+     <div asp-validation-summary="All" class="text-danger">
+
+     </div>
+        
+        
+        <div class="row mb-3">
+            <label asp-for="ModelRegister.FirstName" class="col-sm-2 col-form-label">First Name:</label>
+            <div class="col-sm-9">
+                <input asp-for="ModelRegister.FirstName" class="form-control" required />
+                <span asp-validation-for="ModelRegister.FirstName" class="text-danger"></span>
+            </div>
+        </div>
+
+
+
+        <div class="row mb-3">
+            <label asp-for="ModelRegister.LastName" class="col-sm-2 col-form-label">Last Name:</label>
+            <div class="col-sm-9">
+                <input asp-for="ModelRegister.LastName" class="form-control" required />
+                <span asp-validation-for="ModelRegister.LastName" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label asp-for="ModelRegister.PhoneNumber" class="col-sm-2 col-form-label">Phone Number:</label>
+            <div class="col-sm-9">
+                <input asp-for="ModelRegister.PhoneNumber"
+                       class="form-control" required />
+                <span asp-validation-for="ModelRegister.PhoneNumber" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label asp-for="ModelRegister.Email" class="col-sm-2 col-form-label">Email Address:</label>
+            <div class="col-sm-9">
+                <input asp-for="ModelRegister.Email" 
+                       class="form-control"
+                       required />
+                <span asp-validation-for="ModelRegister.Email" class="text-danger"></span>
+            </div>
+        </div>
+
+
+        <div class="row mb-3">
+            <label asp-for="ModelRegister.HomeAddress" class="col-sm-2 col-form-label">Home Address:</label>
+            <div class="col-sm-9">
+                <textarea class="form-control"rows="3" asp-for="ModelRegister.HomeAddress" class="text-danger"></textarea>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label asp-for="ModelRegister.Specialization" class="col-sm-2 col-form-label">Specialization:</label>
+            <div class="col-sm-9">
+                <input asp-for="ModelRegister.Specialization"
+                       class="form-control"
+                       required />
+                <span asp-validation-for="ModelRegister.Specialization" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label asp-for="ModelRegister.Experience" class="col-sm-2 col-form-label">Experience:</label>
+            <div class="col-sm-9">
+                <textarea class="form-control"
+                          id="qualifications"
+                          rows="3"
+                          required asp-for="ModelRegister.Experience"></textarea>
+                <span asp-validation-for="ModelRegister.Experience" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label asp-for="ModelRegister.MedicalLicenseNumber" class="col-sm-2 col-form-label">Medical License Number:</label>
+            <div class="col-sm-9">
+                <input asp-for="ModelRegister.MedicalLicenseNumber"
+                       class="form-control"
+                       required />
+                <span asp-validation-for="ModelRegister.MedicalLicenseNumber" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label asp-for="ModelRegister.Image" class="col-sm-2 col-form-label">Upload Photo:</label>
+            <div class="col-sm-9">
+                <input asp-for="ModelRegister.Image"
+                       class="form-control"
+                       accept="image/*"
+                       required />
+                <span asp-validation-for="ModelRegister.Image" class="text-danger"></span>
+            </div>
+        </div>
+
+
+
+                <div class="row mb-3">
+            <label asp-for="ModelRegister.Image" class="col-sm-2 col-form-label">Upload Photo:</label>
+            <div class="col-sm-9">
+                <input asp-for="ModelRegister.DateOfBirth" type="datetime-local" class="form-control" required>
+                <span asp-validation-for="ModelRegister.Image" class="text-danger"></span>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <di class="row mb-3">
+            <label asp-for="ModelRegister.Password" class="col-sm-2 col-form-label">Password:</label>
+            <div class="col-sm-9">
+                <input asp-for="ModelRegister.Password" class="form-control" type="password"  required />
+                <span asp-validation-for="ModelRegister.Password" class="text-danger"></span>
+                <small class="form-text password-terms">
+                    Password must be at least 8 characters long, contain an uppercase
+                    letter, a lowercase letter, a number, and a special character.
+                </small>
+            </div>
+        </di
+        
+        
+        
+        v>
+
+        <div class="row mb-3">
+            <label asp-for="ModelRegister.ConfirmPassword" class="col-sm-2 col-form-label">Confirm Password:</label>
+            <div class="col-sm-9">
+                <input asp-for="ModelRegister.ConfirmPassword" type="password" 
+                       class="form-control"
+                       required />
+                <span asp-validation-for="ModelRegister.ConfirmPassword" class="text-danger"></span>
+            </div>
+        </div>
+        <button type="submit" class="btn main-btn">Register</button>
+    </form>
+</div>
+

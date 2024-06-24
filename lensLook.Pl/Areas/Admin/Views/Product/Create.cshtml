@@ -1,0 +1,119 @@
+﻿@model Product
+
+
+
+<div class="container doc_regester">
+    <h1 class="mb-5">Create New Product</h1>
+    <form asp-action="Create" asp-controller="Product" asp-area="admin" method="post" id="doctorRegistrationForm" enctype="multipart/form-data">
+     <div asp-validation-summary="All" class="text-danger">
+
+     </div>
+        
+        
+        <div class="row mb-3">
+            <label asp-for="Name" class="col-sm-2 col-form-label"> Name:</label>
+            <div class="col-sm-9">
+                <input asp-for="Name" class="form-control" required />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+
+
+
+        <div class="row mb-3">
+            <label asp-for="Description" class="col-sm-2 col-form-label">Description</label>
+            <div class="col-sm-9">
+                <input asp-for="Description" class="form-control" required />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">Image</label>
+            <div class="col-sm-9">
+                <input name="ImageProduct" type="file" accept="*/image"
+                       class="form-control" required />
+                   </div>
+        </div>
+
+
+
+
+
+        <div class="row mb-3">
+            <label asp-for="Color" class="col-sm-2 col-form-label">Color</label>
+            <div class="col-sm-9">
+                <input asp-for="Color"
+                       class="form-control"
+                       required />
+                <span asp-validation-for="Color" class="text-danger"></span>
+            </div>
+        </div>
+
+
+        <div class="row mb-3">
+            <label asp-for="LensType" class="col-sm-2 col-form-label">LensType</label>
+            <div class="col-sm-9">
+                <textarea class="form-control" rows="3" asp-for="LensType" class="text-danger"></textarea>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label asp-for="FrameType" class="col-sm-2 col-form-label">FrameType:</label>
+            <div class="col-sm-9">
+                <input asp-for="FrameType"
+                       class="form-control"
+                       required />
+                <span asp-validation-for="FrameType" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label asp-for="Size" class="col-sm-2 col-form-label">Size:</label>
+            <div class="col-sm-9">
+                <textarea class="form-control"
+                          id="qualifications"
+                          rows="3"
+                          required asp-for="Size"></textarea>
+                <span asp-validation-for="Size" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label asp-for="Brand" class="col-sm-2 col-form-label">Brand</label>
+            <div class="col-sm-9">
+                <input asp-for="Brand"
+                       class="form-control"
+                       required />
+                <span asp-validation-for="Brand" class="text-danger"></span>
+            </div>
+        </div>
+
+
+        <div class="row mb-3">
+            <label asp-for="Brand" class="col-sm-2 col-form-label">Price</label>
+            <div class="col-sm-9">
+                <input asp-for="Price"
+                       class="form-control"
+                       required />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+        <div hidden>
+            <input value="HambozoTest" asp-for="PictureUrl"/>
+        </div>
+
+
+
+
+
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+</div>
+

@@ -1,0 +1,149 @@
+﻿
+@{
+    ViewData["Title"] = "OurDoctors";
+
+    if (User.Identity.IsAuthenticated)
+    {
+
+        Layout = "_LayoutWithAuth";
+    }
+    else
+    {
+        Layout = "_Layout";
+
+    }
+}
+
+
+    <link href="~/css/OurDoctors.css" rel="stylesheet" />
+    <link href="~/css/home.css" rel="stylesheet" />
+
+
+
+
+
+    <section class="landing container-fluid p-0 d-grid position-relative align-items-center">
+        <img src="~/photos/about_us.jpg"
+             alt="About us"
+             class="img-fluid position-absolute" />
+        <div class="overlay display-flex align-items-center justify-content-center opacity-50">
+            <h3>Our Doctors</h3>
+        </div>
+    </section>
+
+    <div class=" app_top container text-center ">
+        <h3 class=" mt-5">Our Doctor</h3>
+        <h1 class=" mt-3">Meet With Specialist</h1>
+        <p class=" mt-3 mb-5">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Consectetur, expedita illo corporis repudiandae <br> alias et dicta nam quasi quaerat perferendis blanditiis animi?
+        </p>
+    </div>
+
+
+    <div class="justify-content-center">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-md-4 col-lg-3 gap-5">
+                <div class="card zoom-card ">
+                    <img src="~/photos/our doctor3.jpg" class="card-img-top" alt="Card 3 Image">
+                    <div class="card-overlay ">
+                        <div class="profile-info d-flex flex-column justify-content-center align-items-center">
+                            <h3 class="profile-title">Pedro Herbert</h3>
+                            <p class="profile-designation fs-5">Lasik Specialist</p>
+                            <div class="media-options ">
+                                <a href="#"> <i class="fab fa-facebook-f"></i> </a>
+                                <a href="#"> <i class="fab fa-twitter"></i> </a>
+                                <a href="#"> <i class="fa-brands fa-instagram"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="card zoom-card">
+                    <img src="~/photos/our doctor4.jpg" class="card-img-top" alt="Card 3 Image">
+                    <div class="card-overlay">
+                        <div class="profile-info d-flex flex-column justify-content-center align-items-center">
+                            <h3 class="profile-title">Anisa Austin</h3>
+                            <p class="profile-designation fs-5">Optometrist</p>
+                            <div class="media-options">
+                                <a href="#"> <i class="fab fa-facebook-f"></i> </a>
+                                <a href="#"> <i class="fab fa-twitter"></i> </a>
+                                <a href="#"> <i class="fa-brands fa-instagram"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="card zoom-card">
+                    <img src="~/photos/our doctor6.jpg" class="card-img-top" alt="Card 3 Image">
+                    <div class="card-overlay">
+                        <div class="profile-info d-flex flex-column justify-content-center align-items-center">
+                            <h3 class="profile-title">Georgie Rees</h3>
+                            <p class="profile-designation fs-5"> Surgery Specialist</p>
+                            <div class="media-options">
+                                <a href="#"> <i class="fab fa-facebook-f" class="face"></i> </a>
+                                <a href="#"> <i class="fab fa-twitter " class="twitter"></i> </a>
+                                <a href="#"> <i class="fa-brands fa-instagram" class="insta"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row gx-5 justify-content-center mt-5">
+            <div class="col-md-4 col-lg-3 gap-5">
+                <div class="card zoom-card">
+                    <img src="~/photos/our doctor5.jpg" class="card-img-top" alt="Card 3 Image">
+                    <div class="card-overlay">
+                        <div class="profile-info d-flex flex-column justify-content-center align-items-center">
+                            <h3 class="profile-title">Tiffany Guest</h3>
+                            <p class="profile-designation fs-5"> Optometrist</p>
+                            <div class="media-options">
+                                <a href="#"> <i class="fab fa-facebook-f"></i> </a>
+                                <a href="#"> <i class="fab fa-twitter"></i> </a>
+                                <a href="#"> <i class="fa-brands fa-instagram"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="card zoom-card">
+                    <img src="~/photos/our doctor7.jpg" class="card-img-top" alt="Card 3 Image">
+                    <div class="card-overlay">
+                        <div class="profile-info d-flex flex-column justify-content-center align-items-center">
+                            <h3 class="profile-title">Josh Cortez</h3>
+                            <p class="profile-designation fs-5">Optometrist</p>
+                            <div class="media-options">
+                                <a href="#"> <i class="fab fa-facebook-f"></i> </a>
+                                <a href="#"> <i class="fab fa-twitter"></i> </a>
+                                <a href="#"> <i class="fa-brands fa-instagram"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="card zoom-card">
+                    <img src="~/photos/our doctor9.jpg" class="card-img-top" alt="Card 3 Image">
+                    <div class="card-overlay">
+                        <div class="profile-info d-flex flex-column justify-content-center align-items-center">
+                            <h3 class="profile-title">Ellice Colley</h3>
+                            <p class="profile-designation fs-5">Lasik Specialist</p>
+                            <div class="media-options">
+                                <a href="#"> <i class="fab fa-facebook-f"></i> </a>
+                                <a href="#"> <i class="fab fa-twitter"></i> </a>
+                                <a href="#"> <i class="fa-brands fa-instagram"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/js/Home.js"></script>
+    <script src="~/js/AboutUs.js"></script>
+    <script src="~/js/FAQ.js"></script>

@@ -1,0 +1,177 @@
+﻿@{
+    if (User.Identity.IsAuthenticated)
+    {
+
+        Layout = "_LayoutWithAuth";
+    }
+    else
+    {
+        Layout = "_Layout";
+
+    }
+    ViewData["Title"] = "FAQ";
+}
+
+
+@* pages *@
+<link href="~/css/FAQ.css" rel="stylesheet" />
+<link href="~/css/home.css" rel="stylesheet" />
+
+
+
+
+
+<section class="landing container-fluid p-0 d-grid position-relative align-items-center">
+    <img src="~/photos/faq0.jpg"
+         alt="About us"
+         class="img-fluid position-absolute" />
+    <div class="overlay display-flex align-items-center justify-content-center opacity-50">
+        <h3>FAQ</h3>
+    </div>
+</section>
+
+<div class="container page-content">
+    <div class="row">
+        <div class="col-md-6 col-sm-12 all">
+            <h3>FAQ</h3>
+            <h1>General Question</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <div class="accordion accordion-flush container2"
+                 id="eyeCareAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingEyeCare">
+                        <button class="accordion-button collapsed main-btn fs-4 p-3 rounded"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseEyeCare"
+                                aria-expanded="false"
+                                aria-controls="collapseEyeCare">
+                            Eye Care and Preventative Measures
+                        </button>
+                    </h2>
+                    <div id="collapseEyeCare"
+                         class="accordion-collapse collapse"
+                         aria-labelledby="headingEyeCare"
+                         data-bs-parent="#eyeCareAccordion">
+                        <div class="accordion-body">
+                            Taking proactive steps to care for your eyes is crucial for
+                            maintaining optimal vision and preventing potential eye
+                            conditions. Regular eye exams are fundamental; they can detect
+                            early signs of diseases such as glaucoma, cataracts, and
+                            macular degeneration before noticeable symptoms emerge. An
+                            annual check-up allows eye care professionals to monitor
+                            changes in vision and adjust prescriptions for glasses or
+                            contact lenses accordingly. Moreover, adopting a diet rich in
+                            omega-3 fatty acids, vitamins C and E, and zinc can support
+                            eye health. Foods like leafy greens, fish, nuts, and citrus
+                            fruits provide essential nutrients that help protect against
+                            age-related vision issues.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingEyeDiseases">
+                        <button class="accordion-button collapsed main-btn fs-4 p-3 rounded"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseEyeDiseases"
+                                aria-expanded="false"
+                                aria-controls="collapseEyeDiseases">
+                            Protecting Your Eyes from Digital Strain
+                        </button>
+                    </h2>
+                    <div id="collapseEyeDiseases"
+                         class="accordion-collapse collapse"
+                         aria-labelledby="headingEyeDiseases"
+                         data-bs-parent="#eyeCareAccordion">
+                        <div class="accordion-body">
+                            Protecting Your Eyes from Digital Strain In today's digital
+                            age, many people spend extended periods staring at screens,
+                            which can lead to digital eye strain or computer vision
+                            syndrome. Symptoms include dry eyes, headaches, blurred
+                            vision, and neck and shoulder pain. To mitigate these effects,
+                            the 20-20-20 rule is highly recommended: every 20 minutes,
+                            take a 20-second break to look at something 20 feet away.
+                            Additionally, ensuring your screen is at eye level and
+                            maintaining a comfortable distance can reduce strain. Using
+                            anti-glare screens and proper lighting can further protect
+                            your eyes from the harsh blue light emitted by digital
+                            devices, potentially reducing the risk of long-term damage.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingEyeCauses">
+                        <button class="accordion-button collapsed main-btn fs-4 p-3 rounded"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseEyeCauses"
+                                aria-expanded="false"
+                                aria-controls="collapseEyeCauses">
+                            Lifestyle Choices for Healthy Vision
+                        </button>
+                    </h2>
+                    <div id="collapseEyeCauses"
+                         class="accordion-collapse collapse"
+                         aria-labelledby="headingEyeCauses"
+                         data-bs-parent="#eyeCareAccordion">
+                        <div class="accordion-body">
+                            Several lifestyle choices significantly impact eye health,
+                            emphasizing the importance of protecting your eyes from
+                            external harm. Wearing sunglasses with UV protection shields
+                            your eyes from harmful ultraviolet rays, which can cause
+                            cataracts and other eye damage over time. Smokers are at
+                            higher risk for eye diseases, so quitting smoking can improve
+                            overall eye health. Staying hydrated is also crucial, as
+                            dehydration can lead to dry eyes. Incorporating regular
+                            exercise into your routine can improve circulation, leading to
+                            better oxygen and nutrient supply to the eyes, thereby
+                            supporting their overall function and health. By making these
+                            conscious lifestyle choices, you can significantly enhance and
+                            maintain your eye health for years to come.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingEyeAdvice">
+                        <button class="accordion-button collapsed main-btn fs-4 p-3 rounded"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseEyeAdvice"
+                                aria-expanded="false"
+                                aria-controls="collapseEyeAdvice">
+                            Limit Screen Time and Practice the 20-20-20 Rule
+                        </button>
+                    </h2>
+                    <div id="collapseEyeAdvice"
+                         class="accordion-collapse collapse"
+                         aria-labelledby="headingEyeAdvice"
+                         data-bs-parent="#eyeCareAccordion">
+                        <div class="accordion-body">
+                            Prolonged use of computers, smartphones, and other digital
+                            devices can lead to digital eye strain, characterized by dry
+                            eyes, blurred vision, and headaches. To reduce eye strain,
+                            follow the 20-20-20 rule: every 20 minutes, take a 20-second
+                            break and look at something 20 feet away. Adjusting your
+                            screen to be at eye level, reducing glare with appropriate
+                            lighting, and using anti-reflective screen protectors can also
+                            help minimize strain on your eyes.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-sm-12 right">
+            <img class="cover-photo img-fluid"
+                 src="~/photos/faq3.jpg"
+                 alt="Cover Photo" />
+        </div>
+    </div>
+</div>

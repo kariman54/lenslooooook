@@ -1,0 +1,148 @@
+﻿
+@{
+    ViewData["Title"] = "VisionCheck";
+
+    if (User.Identity.IsAuthenticated)
+    {
+
+        Layout = "_LayoutWithAuth";
+    }
+    else
+    {
+        Layout = "_Layout";
+
+    }
+}
+<link href="~/css/visioncheck.css" rel="stylesheet" />
+
+    <section class="landing container-fluid p-0 d-grid position-relative align-items-center">
+        <img src="~/photos/services.jpg"
+             alt="About us"
+             class="img-fluid position-absolute" />
+        <div class="overlay display-flex align-items-center justify-content-center opacity-50">
+            <h3>Vision Check</h3>
+        </div>
+    </section>
+
+    <div class="serv_parent container">
+        <h3>Vision Check</h3>
+        <div class="serv_top_parent row align-items-center mt-3">
+            <div class="col-md-12">
+                <h1>How To Check Your Vision</h1>
+            </div>
+            <div class="col-md-12 mt-4">
+                <p class="fs-5">
+                    If you can read what is inside the picture, then your vision is
+                    fine, but if there is a problem, you can book an appointment from
+                    here.
+                </p>
+            </div>
+        <a asp-controller="booking" asp-action="Appointment">
+                <button type="button" class="btn main-btn">
+                    Make Appointment
+                </button>
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <!-- Image 1 -->
+            <div class="col-12 col-sm-6 col-md-4 mb-4">
+                <div class="card">
+                    <img src="~/photos/vision check/1.jpg"
+                         class="card-img-top"
+                         alt="Image 1" />
+                </div>
+            </div>
+            <!-- Image 2 -->
+            <div class="col-12 col-sm-6 col-md-4 mb-4">
+                <div class="card">
+                    <img src="~/photos/vision check/2.jpg"
+                         class="card-img-top"
+                         alt="Image 2" />
+                </div>
+            </div>
+            <!-- Image 3 -->
+            <div class="col-12 col-sm-6 col-md-4 mb-4">
+                <div class="card">
+                <img src="~/photos/vision check/3.jpg"
+                         class="card-img-top"
+                         alt="Image 3" />
+                </div>
+            </div>
+            <!-- Image 4 -->
+            <div class="col-12 col-sm-6 col-md-4 mb-4">
+                <div class="card">
+                <img src="~/photos/vision check/4.jpg"
+                         class="card-img-top"
+                         alt="Image 4" />
+                </div>
+            </div>
+            <!-- Image 5 -->
+            <div class="col-12 col-sm-6 col-md-4 mb-4">
+                <div class="card">
+                <img src="~/photos/vision check/5.jpg"
+                         class="card-img-top"
+                         alt="Image 5" />
+                </div>
+            </div>
+            <!-- Image 6 -->
+            <div class="col-12 col-sm-6 col-md-4 mb-4">
+                <div class="card">
+                <img src="~/photos/vision check/6.jpg"
+                         class="card-img-top"
+                         alt="Image 6" />
+                </div>
+            </div>
+            <!-- Image 7 -->
+            <div class="col-12 col-sm-6 col-md-4 mb-4">
+                <div class="card">
+                <img src="~/photos/vision check/7.jpg"
+                         class="card-img-top"
+                         alt="Image 7" />
+                </div>
+            </div>
+            <!-- Image 8 -->
+            <div class="col-12 col-sm-6 col-md-4 mb-4">
+                <div class="card">
+                <img src="~/photos/vision check/8.jpg"
+                         class="card-img-top"
+                         alt="Image 8" />
+                </div>
+            </div>
+            <!-- Image 9 -->
+            <div class="col-12 col-sm-6 col-md-4 mb-4">
+                <div class="card">
+                <img src="~/photos/vision check/9.jpg"
+                         class="card-img-top"
+                         alt="Image 9" />
+                </div>
+            </div>
+            <!-- Image 10 -->
+            <div class="col-12 col-sm-6 col-md-4 mb-4">
+                <div class="card">
+                <img src="~/photos/vision check/10.jpg"
+                         class="card-img-top"
+                         alt="Image 10" />
+                </div>
+            </div>
+            <!-- Image 11 -->
+            <div class="col-12 col-sm-6 col-md-4 mb-4">
+                <div class="card">
+                <img src="~/photos/vision check/11.jpg"
+                         class="card-img-top"
+                         alt="Image 11" />
+                </div>
+            </div>
+            <!-- Image 12 -->
+            <div class="col-12 col-sm-6 col-md-4 mb-4">
+                <div class="card">
+                <img src="~/photos/vision check/12.jpg"
+                         class="card-img-top"
+                         alt="Image 12" />
+                </div>
+            </div>
+        </div>
+    </div>
+

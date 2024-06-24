@@ -1,0 +1,60 @@
+﻿@using lensLook.Bll
+
+@model BookingCreateVm
+@{
+    Layout = "_LayoutWithAuth";
+}
+
+<link href="~/css/online appointment.css" rel="stylesheet" />
+
+
+<div class="container">
+    <h1 class="mb-5">Online Doctor Appointment</h1>
+    <form id="appointmentFormOnline" asp-action="Online" asp-controller="Booking" method="post">
+        <div class="row mb-3">
+            <label for="name" class="col-sm-2 col-form-label">Full Name:</label>
+            <div class="col-sm-10">
+                <input type="text"
+                       class="form-control"
+                       asp-for="FullName"
+                       required />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="phone" class="col-sm-2 col-form-label">Phone Number:</label>
+            <div class="col-sm-10">
+                <input type="tel"
+                       class="form-control"
+                       asp-for="PhoneNumber"
+                       required />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="email" class="col-sm-2 col-form-label">Email Address:</label>
+            <div class="col-sm-10">
+                <input type="email"
+                       class="form-control"
+                       asp-for="Email"
+
+                       required />
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label for="time" class="col-sm-2 col-form-label">Preferred Time (optional):</label>
+            <div class="col-sm-10">
+                <input type="datetime-local" asp-for="AppointmentDate" class="form-control" />
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label for="reason" class="col-sm-2 col-form-label">Reason for Visit:</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" asp-for="Reason" required></textarea>
+            </div>
+        </div>
+        <button type="submit" class="btn main-btn">
+            Submit Appointment Request
+        </button>
+    </form>
+</div>

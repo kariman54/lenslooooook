@@ -1,0 +1,472 @@
+﻿
+@{
+    ViewData["Title"] = "Reviews";
+
+    if (User.Identity.IsAuthenticated)
+    {
+
+        Layout = "_LayoutWithAuth";
+    }
+    else
+    {
+        Layout = "_Layout";
+
+    }
+
+}
+
+    @* pages *@
+    <link href="~/css/Reviews.css" rel="stylesheet" />
+
+
+
+
+<section class="landing container-fluid p-0 d-grid position-relative align-items-center">
+    <img src="~/photos/review 0.jpg"
+         alt="About us"
+         class="img-fluid position-absolute" />
+    <div class="overlay display-flex align-items-center justify-content-center opacity-50">
+        <h3>Reviews</h3>
+    </div>
+</section>
+
+<div class="app_top container text-center">
+    <h3 class="mt-5">Patient Reviews</h3>
+    <h2 class="mt-3 fw-bold">Sharing Your Opinion Matters To Us</h2>
+    <p class="mt-3 mb-5">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo debitis,
+        <br />
+        placeat ratione rerum similique ducimus, suscipit obcaecati assumenda
+        perferendis animi repellendus <br />
+        voluptatem quia, libero odio unde optio! Iste, corrupti quam
+    </p>
+</div>
+
+<section class="container review-page">
+    <div class="section-comments">
+        <div class="cmment-session">
+            <div class="post-comment">
+                <div class="comment-list">
+                    <div class="flex">
+                        <div class="user">
+                            <div class="user-image">
+                                <img src="~/photos/review 9_files.jpg" alt="" />
+                            </div>
+                            <div class="user-meta">
+                                <div class="name fs-3">marco</div>
+                                <div class="day">35 day ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        “Complete confidence in their judgement for my eyes!”
+                    </div>
+                    <div class="reply">
+                        <div class="lick icon">
+                            420 <i class="fa-regular fa-thumbs-up"></i>
+                        </div>
+                        <div class="dislick icon">
+                            10 <i class="fa-regular fa-thumbs-down"></i>
+                        </div>
+                        <div class="re-comment">Reply..</div>
+                        <div class="delet">Delete</div>
+                    </div>
+                    <hr class="horizental-line" />
+                </div>
+
+                <div class="comment-list">
+                    <div class="flex">
+                        <div class="user">
+                            <div class="user-image">
+                                <img src="~/photos/review 10_files.jpg" alt="" />
+                            </div>
+                            <div class="user-meta">
+                                <div class="name fs-3">karem adel</div>
+                                <div class="day">32 day ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        It is wonderful to have good vision thanks to the cataract
+                        removal and lens implants.”
+                    </div>
+                    <div class="reply">
+                        <div class="lick icon">
+                            100 <i class="fa-regular fa-thumbs-up"></i>
+                        </div>
+                        <div class="dislick icon">
+                            5 <i class="fa-regular fa-thumbs-down"></i>
+                        </div>
+                        <div class="re-comment">Reply..</div>
+                        <div class="delet">Deletee</div>
+                    </div>
+                    <hr class="horizental-line" />
+                </div>
+
+                <div class="comment-list">
+                    <div class="flex">
+                        <div class="user">
+                            <div class="user-image">
+                                <img src="~/photos/review 8jpg.jpg" alt="" />
+                            </div>
+                            <div class="user-meta">
+                                <div class="name fs-3">maged hani</div>
+                                <div class="day">30 day ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        “The staff are very friendly and professional.”
+                    </div>
+                    <div class="reply">
+                        <div class="lick icon">
+                            500 <i class="fa-regular fa-thumbs-up"></i>
+                        </div>
+                        <div class="dislick icon">
+                            3<i class="fa-regular fa-thumbs-down"></i>
+                        </div>
+                        <div class="re-comment">Reply..</div>
+                        <div class="delet">Delete</div>
+                    </div>
+                    <hr class="horizental-line" />
+                </div>
+
+                <div class="comment-list">
+                    <div class="flex">
+                        <div class="user">
+                            <div class="user-image">
+                                <img src="~/photos/review 12.jpg" alt="" />
+                            </div>
+                            <div class="user-meta">
+                                <div class="name fs-3">kariman</div>
+                                <div class="day">29 day ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        “I always feel very confident that I have received the best care
+                        possible for my eyes.”
+                    </div>
+                    <div class="reply">
+                        <div class="lick icon">
+                            40 <i class="fa-regular fa-thumbs-up"></i>
+                        </div>
+                        <div class="dislick icon">
+                            <i class="fa-regular fa-thumbs-down"></i>
+                        </div>
+                        <div class="re-comment">Reply..</div>
+                        <div class="delet">Delete</div>
+                    </div>
+                    <hr class="horizental-line" />
+                </div>
+
+                <div class="comment-list">
+                    <div class="flex">
+                        <div class="user">
+                            <div class="user-image">
+                                <img src="~/photos/review 13.jpg" alt="" />
+                            </div>
+                            <div class="user-meta">
+                                <div class="name fs-3">nermen emad</div>
+                                <div class="day">26 day ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment">Excellent help and doctors!!</div>
+                    <div class="reply">
+                        <div class="lick icon">
+                            20 <i class="fa-regular fa-thumbs-up"></i>
+                        </div>
+                        <div class="dislick icon">
+                            <i class="fa-regular fa-thumbs-down"></i>
+                        </div>
+                        <div class="re-comment">Reply..</div>
+                        <div class="delet">Delete</div>
+                    </div>
+                    <hr class="horizental-line" />
+                </div>
+
+                <div class="comment-list">
+                    <div class="flex">
+                        <div class="user">
+                            <div class="user-image">
+                                <img src="~/photos/review 14.jpg" alt="" />
+                            </div>
+                            <div class="user-meta">
+                                <div class="name fs-3">mazen</div>
+                                <div class="day">25 day ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        I was very pleased with the total experience.
+                    </div>
+                    <div class="reply">
+                        <div class="lick icon">
+                            1000<i class="fa-regular fa-thumbs-up"></i>
+                        </div>
+                        <div class="dislick icon">
+                            4<i class="fa-regular fa-thumbs-down"></i>
+                        </div>
+                        <div class="re-comment">Reply..</div>
+                        <div class="delet">Delete</div>
+                    </div>
+                    <hr class="horizental-line" />
+                </div>
+
+                <div class="comment-list">
+                    <div class="flex">
+                        <div class="user">
+                            <div class="user-image">
+                                <img src="~/photos/review 15.jpg" alt="" />
+                            </div>
+                            <div class="user-meta">
+                                <div class="name fs-3">ahmed helmy</div>
+                                <div class="day">23 day ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        “Very impressed with my experience. Couldn’t have asked for
+                        better. Thanks to everyone.”
+                    </div>
+                    <div class="reply">
+                        <div class="lick icon">
+                            10 <i class="fa-regular fa-thumbs-up"></i>
+                        </div>
+                        <div class="dislick icon">
+                            <i class="fa-regular fa-thumbs-down"></i>
+                        </div>
+                        <div class="re-comment">Reply..</div>
+                        <div class="delet">Delete</div>
+                    </div>
+                    <hr class="horizental-line" />
+                </div>
+
+                <div class="comment-list">
+                    <div class="flex">
+                        <div class="user">
+                            <div class="user-image">
+                                <img src="~/photos/review 16.jpg" alt="" />
+                            </div>
+                            <div class="user-meta">
+                                <div class="name fs-3">Hoda</div>
+                                <div class="day">19 day ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        The staff is always great! Makes the visit comfortable.
+                    </div>
+                    <div class="reply">
+                        <div class="lick icon">
+                            <i class="fa-regular fa-thumbs-up"></i>
+                        </div>
+                        <div class="dislick icon">
+                            5 <i class="fa-regular fa-thumbs-down"></i>
+                        </div>
+                        <div class="re-comment">Reply..</div>
+                        <div class="delet">Delete</div>
+                    </div>
+                    <hr class="horizental-line" />
+                </div>
+
+                <div class="comment-list">
+                    <div class="flex">
+                        <div class="user">
+                            <div class="user-image">
+                                <img src="~/photos/review 17.jpg" alt="" />
+                            </div>
+                            <div class="user-meta">
+                                <div class="name fs-3">beshoy samy</div>
+                                <div class="day">15 day ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        Good records of past visits and competent use of diagnostic
+                        equipment.
+                    </div>
+                    <div class="reply">
+                        <div class="lick icon">
+                            98 <i class="fa-regular fa-thumbs-up"></i>
+                        </div>
+                        <div class="dislick icon">
+                            3 <i class="fa-regular fa-thumbs-down"></i>
+                        </div>
+                        <div class="re-comment">Reply..</div>
+                        <div class="delet">Delete</div>
+                    </div>
+                    <hr class="horizental-line" />
+                </div>
+
+                <div class="comment-list">
+                    <div class="flex">
+                        <div class="user">
+                            <div class="user-image">
+                                <img src="~/photos/review 18.jpg" alt="" />
+                            </div>
+                            <div class="user-meta">
+                                <div class="name fs-3">nena amira</div>
+                                <div class="day">14 day ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        High quality care, accommodating, and friendly.
+                    </div>
+                    <div class="reply">
+                        <div class="lick icon">
+                            33 <i class="fa-regular fa-thumbs-up"></i>
+                        </div>
+                        <div class="dislick icon">
+                            <i class="fa-regular fa-thumbs-down"></i>
+                        </div>
+                        <div class="re-comment">Reply..</div>
+                        <div class="delet">Delete</div>
+                    </div>
+                    <hr class="horizental-line" />
+                </div>
+
+                <div class="comment-list">
+                    <div class="flex">
+                        <div class="user">
+                            <div class="user-image">
+                                <img src="~/photos/review 19.jpg" alt="" />
+                            </div>
+                            <div class="user-meta">
+                                <div class="name fs-3">mounir george</div>
+                                <div class="day">10 day ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        “Complete confidence in their judgement for my eyes!”
+                    </div>
+                    <div class="reply">
+                        <div class="lick icon">
+                            77 <i class="fa-regular fa-thumbs-up"></i>
+                        </div>
+                        <div class="dislick icon">
+                            2 <i class="fa-regular fa-thumbs-down"></i>
+                        </div>
+                        <div class="re-comment">Reply..</div>
+                        <div class="delet">Delete</div>
+                    </div>
+                    <hr class="horizental-line" />
+                </div>
+
+                <div class="comment-list">
+                    <div class="flex">
+                        <div class="user">
+                            <div class="user-image">
+                                <img src="~/photos/review 20.jpg" alt="" />
+                            </div>
+                            <div class="user-meta">
+                                <div class="name fs-3">el shenawy</div>
+                                <div class="day">7 day ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        “Staff was very professional. All staff was friendly and
+                        informative on all procedures. They made me feel very
+                        comfortable. Dr. Gans is the best!!!”
+                    </div>
+                    <div class="reply">
+                        <div class="lick icon">
+                            23 <i class="fa-regular fa-thumbs-up"></i>
+                        </div>
+                        <div class="dislick icon">
+                            1 <i class="fa-regular fa-thumbs-down"></i>
+                        </div>
+                        <div class="re-comment">Reply..</div>
+                        <div class="delet">Delete</div>
+                    </div>
+                    <hr class="horizental-line" />
+                </div>
+
+                <div class="comment-list">
+                    <div class="flex">
+                        <div class="user">
+                            <div class="user-image">
+                                <img src="~/photos/review 21.jpg" alt="" />
+                            </div>
+                            <div class="user-meta">
+                                <div class="name fs-3">sandy</div>
+                                <div class="day">4 day ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        Everyone was professional, friendly, knowledgeable, and helpful.
+                    </div>
+                    <div class="reply">
+                        <div class="lick icon">
+                            9 <i class="fa-regular fa-thumbs-up"></i>
+                        </div>
+                        <div class="dislick icon">
+                            <i class="fa-regular fa-thumbs-down"></i>
+                        </div>
+                        <div class="re-comment">Reply..</div>
+                        <div class="delet">Delete</div>
+                    </div>
+                    <hr class="horizental-line" />
+                </div>
+
+                <div class="comment-list">
+                    <div class="flex">
+                        <div class="user">
+                            <div class="user-image">
+                                <img src="~/photos/review 22.jpg" alt="" />
+                            </div>
+                            <div class="user-meta">
+                                <div class="name fs-3">Dr.heba hani</div>
+                                <div class="day">2 day ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        “I had a great experience; the staff was both professional and
+                        knowledgeable as well.”
+                    </div>
+                    <div class="reply">
+                        <div class="lick icon">
+                            5 <i class="fa-regular fa-thumbs-up"></i>
+                        </div>
+                        <div class="dislick icon">
+                            <i class="fa-regular fa-thumbs-down"></i>
+                        </div>
+                        <div class="re-comment">Reply..</div>
+                        <div class="delet">Delete</div>
+                    </div>
+                    <hr class="horizental-line" />
+                </div>
+
+                <div id="comment-list">
+                    <!-- Comments will appear here -->
+                </div>
+                <form action="" class="comment-box text-center" id="comment-form">
+                    <div class="user">
+                        <div class="image">
+                            <img src="~/photos/user icon.jpg" alt="User Image" />
+                        </div>
+                        <div class="user-meta">
+                            <div class="name fs-3">USERNAME</div>
+                            <div class="day" id="day"></div>
+                        </div>
+                    </div>
+                    <textarea name="comment"
+                              id="comment-input"
+                              placeholder="Write a comment..."></textarea>
+                    <button type="submit" class="comment-submit main-btn">
+                        Comment
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script src="~/js/Reviews.js"></script>

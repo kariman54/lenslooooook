@@ -1,0 +1,50 @@
+﻿@model RegisterVM
+
+
+
+
+
+<div class="card p-2">
+
+    <div class="container">
+        <form id="appointmentFormOnline" asp-action="RegisterNewPatient" asp-controller="account" asp-area="admin" method="post">
+            <div class="mb-3">
+                <label asp-for="FirstName" class="form-label fw-bold">First Name</label>
+                <input asp-for="FirstName" class="form-control" placeholder="Enter your first name" required />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="LastName" class="form-label fw-bold">Last Name</label>
+                <input asp-for="LastName" class="form-control" placeholder="Enter your last name" required />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label fw-bold">Email</label>
+                <input asp-for="Email" class="form-control" placeholder="Enter your email" required />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DateOfBirth" class="form-label fw-bold">Date of Birth</label>
+                <input asp-for="DateOfBirth" class="form-control" required />
+                <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Password" class="form-label fw-bold">Password</label>
+                <input asp-for="Password" class="form-control" placeholder="Enter your password" required />
+                <span asp-validation-for="Password" class="text-danger"></span>
+                <div class="form-text">Password must be at least 8 characters long, including a combination of uppercase and lowercase letters, numbers, and symbols.</div>
+            </div>
+            <div class="mb-3">
+                <label asp-for="ConfirmPassword" class="form-label fw-bold">Confirm Password</label>
+                <input asp-for="ConfirmPassword" class="form-control" placeholder="Confirm your password" required />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="mb-3 form-check">
+                <input asp-for="IsActive" class="form-check-input" required />
+                <label asp-for="IsActive" class="form-check-label">I agree to the Terms and Conditions</label>
+                <a href="#">(link to Terms and Conditions)</a>
+            </div>
+            <button type="submit" class="btn btn-primary  ms-0 mb-3">Register New Account</button>
+        </form>
+    </div>
+</div>

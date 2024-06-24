@@ -1,0 +1,230 @@
+﻿@{
+    var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+}
+
+@inject IBasketRepo BasketRepo;
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lens Look</title>
+    @* libraries *@
+    <link rel="stylesheet" href="~/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/all.min.css" />
+    @* pages *@
+    <link href="~/css/home.css" rel="stylesheet" />
+    <link href="~/css/services.css" rel="stylesheet" />
+    @* <link href="~/css/repair.css" rel="stylesheet" /> *@
+    @* online *@
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet" />
+
+
+    <link rel="icon" type="image/x-icon" href="~/photos/logo.ico">
+
+    @RenderSection("Linkedcss", false)
+
+
+</head>
+
+
+
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                <img src="~/photos/logo1.png" alt="" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link p-2 p-lg-3" aria-current="page" asp-controller="Home"
+                           asp-action="Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-2 p-lg-3" asp-controller="home" asp-action="AboutUs" id="AboutUs">
+                            About
+                            Us
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-2 p-lg-3" asp-controller="home" asp-action="Services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-2 p-lg-3 d-flex" asp-action="store" asp-controller="Home">Store</a>
+
+                    </li>
+                    @if(User.IsInRole("Doctor"))
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link p-2 p-lg-3" asp-action="Appointment" asp-controller="booking">Appointment</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link p-2 p-lg-3" asp-action="Appointment" asp-controller="home">Appointment</a>
+                        </li>
+                    }
+
+                    <li class="nav-item dropdown p-2 p-lg-2">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            pages
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item" asp-controller="Home" asp-action="OurDoctors">Our Doctors</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li><a class="dropdown-item" asp-controller="Home" asp-action="FAQ">FAQ</a></li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li>
+                                <a class="dropdown-item" asp-controller="Home" asp-action="Reviews">Reviews</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+               
+                <div class="d-flex justify-context-center">
+
+                    <div class="px-3">
+                        <a type="button" class="btn main-btn position-relative" asp-action="Cart" asp-controller="Basket">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill " style="background-color: #17b8da; color:#fff">
+                                <span> @BasketRepo.GetCountBasketItems(userId)</span>
+                            </span>
+                        </a>
+                    </div>
+
+                    <div>
+                        <a asp-action="SignOut" asp-controller="account" class="btn fs-5 logout" style="background-color:#17b8da; color:#fff">
+                            logout
+                            <i class="fa-solid fa-right-from-bracket fa-lg"></i>
+
+                        </a>
+                    </div>
+
+
+                    </di>
+
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+    </nav>
+
+    <!-- Main content wrapped in a content container -->
+    <div class="content">
+
+        @RenderBody()
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="footer">
+        <div>
+            <div class="row">
+                <div class="col ms-5">
+                    <img src="~/photos/white logo.png" alt="Company Logo" class="img-fluid mb-3" />
+                    <p>
+                        Pioneering a paradigm shift in eye care, by creating a world where personalized and advanced eye health solutions are at everyone's doorstep.
+                    </p>
+                    <div class="d-flex justify-content-center icons">
+                        <a href="#"><i class="fa-brands fa-facebook me-4 fs-1"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter me-4 fs-1"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in me-4 fs-1"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram me-4 fs-1"></i></a>
+                    </div>
+                </div>
+                <div class="col text-center">
+                    <h4>Menu Items</h4>
+                    <hr />
+                    <ul style="list-style: none">
+                        <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a asp-controller="Home" asp-action="index">About Us</a></li>
+                        <li><a asp-controller="Home" asp-action="Index">Services</a></li>
+                        <li><a asp-controller="Home" asp-action="Store">Store</a></li>
+                        <li><a asp-controller="Home" asp-action="Appointment">Appointment</a></li>
+                    </ul>
+                </div>
+                <div class="col text-center column-gap-2">
+                    <h4>Support Links</h4>
+                    <hr />
+                    <ul style="list-style: none">
+                        <li><a asp-controller="Home" asp-action="OurDoctors">Our Doctors</a></li>
+                        <li><a asp-controller="Home" asp-action="FAQ">FAQs</a></li>
+                        <li><a asp-controller="Home" asp-action="Reviews">Reviews</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="col text-center">
+                    <h4>Contact Us</h4>
+                    <hr />
+                    <p>123 Main Street<br />Anytown, CA 12345<br />555-555-5555<br />info@company.com</p>
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="copyright text-center mt-3">
+                    <p>&copy; 2024 Lenslook. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+@*     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> *@
+    @* libraries *@
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/all.min.js"></script>
+    @* pages *@
+    <script src="~/js/Home.js"></script>
+    <script src="~/js/AboutUs.js"></script>
+    <script src="~/js/FAQ.js"></script>
+
+    @* font-awesome *@
+    <script src="~/font-awesome/js/all.min.js"></script>
+
+    <!-- @await RenderSectionAsync("Scripts", required: false) -->
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+:root {
+  --myblue: #033373;
+  --mylight: #17b8da;
+  --mywhite: white;
+  --mylightblue: #03347310;
+  --mydoctorblue: #03347377;
+  --transition: 0.3s ease-in-out;
+  --bottom_up: bottomUp 2s ease-in-out forwards;
+  --left_right: left_right 2s ease-in-out forwards;
+  --my_shadow: 0px 0px 15px -5px var(--myblue);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+.serv_parent {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  color: var(--myblue);
+}
+
+.serv_parent > h3 {
+  color: var(--mylight);
+  animation: var(--left_right);
+}
+
+@keyframes left_right {
+  100% {
+    transform: translatex(0%);
+    -webkit-transform: translatex(0%);
+    -moz-transform: translatex(0%);
+    -ms-transform: translatex(0%);
+    -o-transform: translatex(0%);
+  }
+  0% {
+    transform: translatex(100%);
+    -webkit-transform: translatex(100%);
+    -moz-transform: translatex(100%);
+    -ms-transform: translatex(100%);
+    -o-transform: translatex(100%);
+  }
+}
+
+@keyframes bottomUp {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.card-img-top {
+  width: 100%;
+  height: auto;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transition: var(--transition);
+  -webkit-transition: var(--transition);
+  -moz-transition: var(--transition);
+  -ms-transition: var(--transition);
+  -o-transition: var(--transition);
+}
+
+.card {
+  transition: var(--transition);
+  -webkit-transition: var(--transition);
+  -moz-transition: var(--transition);
+  -ms-transition: var(--transition);
+  -o-transition: var(--transition);
+  box-shadow: var(--my_shadow);
+  max-width: 300px;
+  max-height: 300px;
+}

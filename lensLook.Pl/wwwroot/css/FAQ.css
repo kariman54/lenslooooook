@@ -1,0 +1,39 @@
+:root {
+    --myblue: #033373;
+    --mylight: #17b8da;
+    --mywhite: white;
+    --mylightblue: #03347310;
+    --mydoctorblue: #03347377;
+    --transition: 0.3s ease-in-out;
+    --animation: left_right 2s ease-in-out;
+    --bottom_up: bottomUp 2s ease-in-out forwards;
+    --left_right: left_right 1s ease-in-out forwards;
+    --my_shadow: 0px 0px 15px -5px var(--myblue);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+.page-content {
+    margin-top: 100px;
+    color: var(--myblue);
+}
+
+.all h3 {
+    color: var(--mylight);
+    animation: var(--left_right);
+    /* transition: var(--transition); */
+}
+
+.accordion-body {
+    color: var(--myblue);
+}
+
+.container2 {
+    color: var(--myblue);
+    margin-top: 50px;
+    margin-bottom: 100px;
+}

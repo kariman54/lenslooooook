@@ -1,0 +1,350 @@
+﻿
+@{
+    ViewData["Title"] = "EyeCare";
+    if (User.Identity.IsAuthenticated)
+    {
+
+        Layout = "_LayoutWithAuth";
+    }
+    else
+    {
+        Layout = "_Layout";
+
+    }
+}
+<link href="~/css/eyecare.css" rel="stylesheet" />
+<section class="landing container-fluid p-0 d-grid position-relative align-items-center">
+    <img src="~/photos/services.jpg"
+         alt="About us"
+         class="img-fluid position-absolute" />
+    <div class="overlay display-flex align-items-center justify-content-center opacity-50">
+        <h3>Eye Care</h3>
+    </div>
+</section>
+
+<div class="serv_parent container">
+    <h3>Eye Care</h3>
+    <div class="serv_top_parent row align-items-center mt-3">
+        <div class="col-md-12">
+            <h1>What About Your Eye Care</h1>
+        </div>
+        <div class="col-md-12 mt-4">
+            <p class="fs-5">
+                Here are some articles that may be important and useful for you.
+                There is some information about some eye diseases and some tips that
+                will enable you to preserve your vision.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="container eye-container1">
+    <h2 class="text-center mb-3">Eye Care Information</h2>
+    <div class="accordion accordion-flush mt-4" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed main-btn fs-4 p-3 rounded"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne"
+                        aria-expanded="false"
+                        aria-controls="collapseOne">
+                    Eye Care and Preventative Measures
+                </button>
+            </h2>
+            <div id="collapseOne"
+                 class="accordion-collapse collapse"
+                 data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    Taking proactive steps to care for your eyes is crucial for
+                    maintaining optimal vision and preventing potential eye
+                    conditions. Regular eye exams are fundamental; they can detect
+                    early signs of diseases such as glaucoma, cataracts, and macular
+                    degeneration before noticeable symptoms emerge. An annual check-up
+                    allows eye care professionals to monitor changes in vision and
+                    adjust prescriptions for glasses or contact lenses accordingly.
+                    Moreover, adopting a diet rich in omega-3 fatty acids, vitamins C
+                    and E, and zinc can support eye health. Foods like leafy greens,
+                    fish, nuts, and citrus fruits provide essential nutrients that
+                    help protect against age-related vision issues.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed main-btn fs-4 p-3 rounded"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo"
+                        aria-expanded="false"
+                        aria-controls="collapseTwo">
+                    Protecting Your Eyes from Digital Strain
+                </button>
+            </h2>
+            <div id="collapseTwo"
+                 class="accordion-collapse collapse"
+                 data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    In today's digital age, many people spend extended periods staring
+                    at screens, which can lead to digital eye strain or computer
+                    vision syndrome. Symptoms include dry eyes, headaches, blurred
+                    vision, and neck and shoulder pain. To mitigate these effects, the
+                    20-20-20 rule is highly recommended: every 20 minutes, take a
+                    20-second break to look at something 20 feet away. Additionally,
+                    ensuring your screen is at eye level and maintaining a comfortable
+                    distance can reduce strain. Using anti-glare screens and proper
+                    lighting can further protect your eyes from the harsh blue light
+                    emitted by digital devices, potentially reducing the risk of
+                    long-term damage.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed main-btn fs-4 p-3 rounded"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree"
+                        aria-expanded="false"
+                        aria-controls="collapseThree">
+                    Lifestyle Choices for Healthy Vision
+                </button>
+            </h2>
+            <div id="collapseThree"
+                 class="accordion-collapse collapse"
+                 data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    Several lifestyle choices significantly impact eye health,
+                    emphasizing the importance of protecting your eyes from external
+                    harm. Wearing sunglasses with UV protection shields your eyes from
+                    harmful ultraviolet rays, which can cause cataracts and other eye
+                    damage over time. Smokers are at higher risk for eye diseases, so
+                    quitting smoking can improve overall eye health. Staying hydrated
+                    is also crucial, as dehydration can lead to dry eyes.
+                    Incorporating regular exercise into your routine can improve
+                    circulation, leading to better oxygen and nutrient supply to the
+                    eyes, thereby supporting their overall function and health. By
+                    making these conscious lifestyle choices, you can significantly
+                    enhance and maintain your eye health for years to come.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr />
+
+<div class="container eye-container2">
+    <h2 class="text-center mb-3">Common Eye Diseases</h2>
+    <div class="accordion accordion-flush mt-4" id="accordionFlushExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed main-btn fs-4 p-3 rounded"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne"
+                        aria-expanded="false"
+                        aria-controls="flush-collapseOne">
+                    Cataracts: Gradual Vision Obstruction
+                </button>
+            </h2>
+            <div id="flush-collapseOne"
+                 class="accordion-collapse collapse"
+                 data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    Cataracts are a prevalent eye condition characterized by the
+                    clouding of the eye's natural lens, leading to blurry vision and,
+                    eventually, significant vision impairment if untreated. This
+                    condition often develops slowly and primarily affects individuals
+                    over the age of 50, although it can occur in younger people due to
+                    factors like diabetes, smoking, and prolonged exposure to
+                    ultraviolet light. Symptoms include fading or yellowing of colors,
+                    difficulty seeing at night, and sensitivity to light and glare.
+                    Treatment typically involves surgical removal of the cloudy lens,
+                    which is then replaced with an artificial intraocular lens,
+                    restoring clear vision for most patients.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed main-btn fs-4 p-3 rounded"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseTwo"
+                        aria-expanded="false"
+                        aria-controls="flush-collapseTwo">
+                    Glaucoma: The Silent Thief of Sight
+                </button>
+            </h2>
+            <div id="flush-collapseTwo"
+                 class="accordion-collapse collapse"
+                 data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    Glaucoma is a group of eye diseases that damage the optic nerve,
+                    crucial for vision, often due to abnormally high pressure in the
+                    eye. It's commonly known as the "silent thief of sight" because it
+                    usually progresses without noticeable symptoms until significant
+                    vision loss has occurred. There are two main types: open-angle
+                    glaucoma, which develops slowly over time, and angle-closure
+                    glaucoma, which can occur suddenly and is a medical emergency.
+                    Regular eye exams are essential for early detection and
+                    management, as treatments like prescription eye drops, laser
+                    treatment, or surgery can help control the intraocular pressure
+                    and prevent further damage.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed main-btn fs-4 p-3 rounded"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseThree"
+                        aria-expanded="false"
+                        aria-controls="flush-collapseThree">
+                    Macular Degeneration: Age-Related Vision Loss
+                </button>
+            </h2>
+            <div id="flush-collapseThree"
+                 class="accordion-collapse collapse"
+                 data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    Age-related macular degeneration (AMD) is a leading cause of
+                    vision loss among older adults, affecting the macula, the central
+                    part of the retina responsible for sharp, detailed vision. There
+                    are two types of AMD: dry and wet. Dry AMD, the more common form,
+                    occurs when macular cells gradually break down, while wet AMD
+                    involves abnormal blood vessels growing under the retina, which
+                    can leak and cause rapid vision loss. Early symptoms include
+                    difficulty recognizing faces, blurred or wavy central vision, and
+                    the need for brighter light when reading. While there is no cure
+                    for AMD, treatments like dietary supplements, laser therapy, and
+                    medications that inhibit blood vessel growth can help slow
+                    progression and manage symptoms.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr />
+
+<div class="container eye-container2">
+    <div class="container my-5 mt-4">
+        <h2 class="mb-4 text-center">Eye Care Advice</h2>
+        <div class="accordion accordion-flush" id="eyeCareAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingEyeCare">
+                    <button class="accordion-button collapsed main-btn fs-4 p-3 rounded"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseEyeCare"
+                            aria-expanded="false"
+                            aria-controls="collapseEyeCare">
+                        Regular Eye Examinations
+                    </button>
+                </h2>
+                <div id="collapseEyeCare"
+                     class="accordion-collapse collapse"
+                     aria-labelledby="headingEyeCare"
+                     data-bs-parent="#eyeCareAccordion">
+                    <div class="accordion-body">
+                        One of the most important steps in maintaining good eye health
+                        is to have regular eye examinations. These exams help detect
+                        vision problems, eye diseases, and other conditions that can
+                        lead to vision loss. Early detection and treatment of issues
+                        like glaucoma, macular degeneration, and diabetic retinopathy
+                        can prevent significant damage. It’s recommended that adults
+                        have a comprehensive eye exam every one to two years, depending
+                        on age, risk factors, and whether they currently wear glasses or
+                        contact lenses.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingEyeDiseases">
+                    <button class="accordion-button collapsed main-btn fs-4 p-3 rounded"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseEyeDiseases"
+                            aria-expanded="false"
+                            aria-controls="collapseEyeDiseases">
+                        Healthy Diet and Hydration
+                    </button>
+                </h2>
+                <div id="collapseEyeDiseases"
+                     class="accordion-collapse collapse"
+                     aria-labelledby="headingEyeDiseases"
+                     data-bs-parent="#eyeCareAccordion">
+                    <div class="accordion-body">
+                        Consuming a diet rich in fruits, vegetables, and omega-3 fatty
+                        acids can support eye health. Foods like spinach, kale, and
+                        carrots are high in antioxidants such as lutein and zeaxanthin,
+                        which help protect the eyes from damage. Omega-3 fatty acids,
+                        found in fish like salmon and tuna, are beneficial for
+                        maintaining healthy retinal function. Staying hydrated is also
+                        crucial as it helps to prevent dry eyes and supports the overall
+                        function of the eyes.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingEyeCauses">
+                    <button class="accordion-button collapsed main-btn fs-4 p-3 rounded"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseEyeCauses"
+                            aria-expanded="false"
+                            aria-controls="collapseEyeCauses">
+                        Protective Eyewear
+                    </button>
+                </h2>
+                <div id="collapseEyeCauses"
+                     class="accordion-collapse collapse"
+                     aria-labelledby="headingEyeCauses"
+                     data-bs-parent="#eyeCareAccordion">
+                    <div class="accordion-body">
+                        Wearing sunglasses that block 100% of UVA and UVB rays is
+                        essential when outdoors to protect your eyes from harmful
+                        ultraviolet light, which can increase the risk of cataracts and
+                        macular degeneration. Additionally, wearing protective eyewear
+                        during activities that could potentially cause eye injuries,
+                        such as sports, home improvement projects, or work that involves
+                        hazardous materials, can prevent serious eye damage.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingEyeAdvice">
+                    <button class="accordion-button collapsed main-btn fs-4 p-3 rounded"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseEyeAdvice"
+                            aria-expanded="false"
+                            aria-controls="collapseEyeAdvice">
+                        Limit Screen Time and Practice the 20-20-20 Rule
+                    </button>
+                </h2>
+                <div id="collapseEyeAdvice"
+                     class="accordion-collapse collapse"
+                     aria-labelledby="headingEyeAdvice"
+                     data-bs-parent="#eyeCareAccordion">
+                    <div class="accordion-body">
+                        Prolonged use of computers, smartphones, and other digital
+                        devices can lead to digital eye strain, characterized by dry
+                        eyes, blurred vision, and headaches. To reduce eye strain,
+                        follow the 20-20-20 rule: every 20 minutes, take a 20-second
+                        break and look at something 20 feet away. Adjusting your screen
+                        to be at eye level, reducing glare with appropriate lighting,
+                        and using anti-reflective screen protectors can also help
+                        minimize strain on your eyes.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

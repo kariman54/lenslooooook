@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewData["Title"] = "service";
+
+    if (User.Identity.IsAuthenticated)
+    {
+
+        Layout = "_LayoutWithAuth";
+    }
+    else
+    {
+        Layout = "_Layout";
+
+    }
+
+
+}
+
+<link rel="stylesheet" href="~/css/services" />
+<section class="landing container-fluid p-0 d-grid position-relative align-items-center">
+    <img src="~/photos/services.jpg" alt="About us" class="img-fluid position-absolute" />
+    <div class="overlay display-flex align-items-center justify-content-center opacity-50">
+        <h3>Services</h3>
+    </div>
+</section>
+
+<div class="serv_parent container">
+    <h3>Our Services</h3>
+    <div class="serv_top_parent row align-items-center">
+        <div class="col-md-5">
+            <h1>What Service We Offer</h1>
+        </div>
+        <div class="col-md-6">
+            <p class="fs-5">
+                We are a website where users can get their eyes tested and buy glasses without leaving their homes.
+            </p>
+        </div>
+    </div>
+    <div class="card-group gap-5">
+        <div class="card rounded my-card-hover">
+            <img src="~/photos/serv1.jpg" alt="Eye Care Service" class="card-img-top img-fluid" />
+            <div class="card-body text-center">
+                <h5 class="card-title">Eye Care</h5>
+                <p class="card-text mx-4">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+                <a asp-controller="Home" asp-action="EyeCare"><button type="button" class="btn main-btn">Read more</button></a>
+            </div>
+        </div>
+        <div class="card rounded my-card-hover">
+            <img src="~/photos/serv2.jpg" alt="Vision Check Service" class="card-img-top img-fluid" />
+            <div class="card-body text-center">
+                <h5 class="card-title">Vision Check</h5>
+                <p class="card-text mx-4">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+                <a asp-controller="Home" asp-action="VisionCheck">
+                    <button type="button" class="btn main-btn">
+                        Make a check
+                    </button>
+                </a>
+            </div>
+        </div>
+        <div class="card rounded my-card-hover">
+            <img src="~/photos/serv3.jpg" alt="Repairs Service" class="card-img-top img-fluid" />
+            <div class="card-body text-center">
+                <h5 class="card-title">Repairs</h5>
+                <p class="card-text mx-4">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+                <a href="make repair.html">
+                    <a type="button" asp-controller="booking" asp-action="Repair" class="btn main-btn">
+                        Book a repair
+                    </a>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

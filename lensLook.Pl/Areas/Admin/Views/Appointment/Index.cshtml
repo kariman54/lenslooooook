@@ -1,0 +1,171 @@
+﻿@model List<Booking>
+@inject IServicesRepo _ServicesRepo;
+   
+
+
+@section ScriptCss {
+    <link rel="stylesheet" href="~/dashboard/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="~/dashboard/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="~/dashboard/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+
+
+}
+
+
+<!-- /.card -->
+
+<div class="card">
+    <div class="card-header ">
+        <h3 class="card-title">DataTable Requestes</h3>
+
+    </div>
+
+
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>User Name</th>
+                    <th>Full Name</th>
+                    <th>Services Type</th>
+                    <th>Emaill</th>
+                    <th>Phone </th>
+                    <th>Request Date</th>
+                    <th>Appointment Date</th>
+                    <th>Status</th>
+                    <th>action </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @_Usermanager.Users.FirstOrDefault(x=>x.Id==item.UserId).DisplayName</td>
+
+
+                        <td>@item.FullName</td>
+                        <td>
+                            @{
+                                if (@_ServicesRepo.GetById(item.ServiceId).BookingType.ToString() == "Online")
+                                {
+                                    <button class="btn btn-success">Online </button>
+                                }
+                                else if (@_ServicesRepo.GetById(item.ServiceId).BookingType.ToString() == "Repairs")
+                                {
+                                    <button class="btn btn-primary">Repairs </button>
+                                }
+                                else
+                                {
+                                    <button class="btn btn-warning">HomeVisit </button>
+                                }
+                            }
+
+                            
+                            
+                            
+                        
+                        
+                        </td>
+
+
+
+
+                        <td>@item.Email</td>
+                        <td>@item.PhoneNumber</td>
+                        <td>@item.RequestDate</td>
+                        <td>@item.AppointmentDate</td>
+                        <td>
+                            @if(item.Status==BookingStatus.Pending)
+                            {
+                                <button  class="btn btn-warning">Pending </button>
+                            }
+
+
+                            @if (item.Status == BookingStatus.Accepted)
+                            {
+                                <button class="btn btn-primary">Success </button>
+                            }
+
+                            
+
+                            
+                            @if(item.Status==BookingStatus.Rejected)
+                            {
+                                <button class="btn btn-danger">Rejected </button>
+                            }
+
+
+                        </td>
+
+
+                        <td class="d-flex flex-column ">
+
+                            @if (item.Status != BookingStatus.Accepted)
+                            {
+                            <a class="btn btn-success my-3" asp-action="ChooseDoctorForAppointment" asp-area="admin" asp-route-id="@item.BookingId" asp-controller="Appointment">Choose Doctor For Appointment</a>
+                                <a class="btn btn-danger" asp-action="DeleteBooking" asp-area="admin" asp-route-id="@item.BookingId" asp-controller="Appointment"> Rejected </a>
+
+                            }
+                            else
+                            {
+                                                            <button class="btn btn-success" disabled>Done Booking</button>
+                                    
+                            }
+
+                        </td>
+
+                        
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>
+<!-- /.card -->
+@section ScriptES6 {
+
+
+    <script src="~/dashboard/plugins/jquery/jquery.min.js"></script>
+
+    <script src="~/dashboard/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/dashboard/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/dashboard/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="~/dashboard/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="~/dashboard/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="~/dashboard/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="~/dashboard/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+    <script src="~/dashboard/plugins/jszip/jszip.min.js"></script>
+    <script src="~/dashboard/plugins/pdfmake/pdfmake.min.js"></script>
+    <script src="~/dashboard/plugins/pdfmake/vfs_fonts.js"></script>
+    <script src="~/dashboard/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+    <script src="~/dashboard/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+    <script src="~/dashboard/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
+    <script src="~/dashboard/dist/js/adminlte.min.js?v=3.2.0"></script>
+
+    <script src="~/dashboard/dist/js/demo.js"></script>
+
+    <script>
+        $(function () {
+            $("#example1").DataTable({
+                "responsive": true, "lengthChange": false, "autoWidth": false,
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
+        });
+    </script>
+}

@@ -1,0 +1,222 @@
+﻿@model Order
+
+@{
+    Layout = "_LayoutWithAuth";
+}
+
+
+
+
+<style>
+    @@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:300,700');
+img {
+  max-width: 100%;
+}
+main {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  color: #033373;
+}
+@@media screen and (min-width: 1060px) {
+  main {
+    grid-template-columns: minmax(530px, 3fr) minmax(530px, 2fr);
+  }
+}
+.cart {
+  padding: 2rem;
+}
+.cart > .cart-item, .cart > .shipping, .cart > .total {
+  display: grid;
+  grid-template-columns: minmax(80px, 2fr) 6fr 3ch 7ch;
+  grid-gap: 1rem;
+  align-items: center;
+}
+.cart > .cart-item .image, .cart > .shipping .image, .cart > .total .image {
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
+}
+.cart > .cart-item .title, .cart > .shipping .title, .cart > .total .title {
+  font-weight: 700;
+}
+.cart > .cart-item .title > span, .cart > .shipping .title > span, .cart > .total .title > span {
+  display: block;
+  font-weight: 300;
+}
+.cart > .cart-item .price, .cart > .shipping .price, .cart > .total .price {
+  text-align: right;
+}
+.cart .total .title, .cart .shipping .title {
+  grid-column: 2;
+}
+.cart .total {
+  border-top: 1px solid #dadada;
+  border-bottom: 1px solid #dadada;
+}
+.cart .total .price {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.checkout {
+  background: #fff;
+  padding: 2rem;
+  padding-right: 3rem;
+}
+.checkout header {
+  display: grid;
+  grid-template-columns: minmax(16ch, 1fr) 4fr;
+}
+.checkout header h1, .checkout header p {
+  margin-top: 0;
+  grid-column: 2;
+}
+.checkout header h1 {
+  margin-bottom: 0;
+}
+.checkout header p {
+  margin-bottom: 2rem;
+}
+.checkout form .input-group {
+  margin-bottom: 1.5rem;
+  display: grid;
+  grid-template-columns: minmax(16ch, 1fr) 4fr;
+  align-items: baseline;
+}
+.checkout form .input-group .label {
+  padding-right: 1rem;
+  text-align: right;
+}
+.checkout form .input-group .input {
+  align-items: baseline;
+}
+.checkout form .input-group .input input {
+  width: 100%;
+  border: 0;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  border-bottom: 1px solid #dadada;
+  padding: 0.5rem 0;
+}
+.checkout form .input-group .input input:focus {
+  outline: none;
+  border-color: #121212;
+}
+.checkout form .input-group .input.number {
+  display: flex;
+}
+.checkout form .input-group .input.number > span {
+  padding: 0 0.5rem;
+}
+.checkout form .input-group .input.number input {
+  text-align: center;
+  min-width: 4ch;
+}
+.checkout form .input-group button {
+  grid-column: 2;
+  color: #FFF;
+  padding: 1rem;
+  border: 0;
+  cursor: pointer;
+  margin-top: 2rem;
+}
+.checkout form .input-group button:hover {
+  transform: translatey(-1px);
+}
+
+    ::placeholder {
+        color: #03347377; 
+        opacity: 1; 
+    }
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<main class="p-5">
+    <section class="cart">
+
+        @foreach (var item in Model.Items)
+        {
+            <div class="cart-item my-2" style="color:#17b8da">
+                <img src="@item.Product.ProductPictureUrl" width="30%">
+                <p class="title">@item.Product.ProductName<span>@item.Quantity</span></p>
+                <p class="currency">LE:</p>
+                 <p class="price">@item.Price</p> 
+            </div>
+        }
+
+
+
+
+
+        <div class="shipping" style="color:#17b8da">
+            <p class="title">Shipping</p>
+            <p class="currency">LE:-</p>
+            <p class="price">10</p>
+        </div>
+        <div class="total" >
+            <p class="title">Total</p>
+            <p class="currency">LE:</p>
+            <p class="price">@(@Model.SubTotal+10)</p>
+        </div>
+    </section>
+    <section class="checkout">
+        <header>
+            <h1>Checkout</h1>
+            <p style="color:#17b8da">by Cash</p>
+        </header>
+        <form asp-action="CreateOrder" asp-controller="Order" method="post">
+            <div class="input-group">
+                <div class="label">
+                    <label for="name">Full Name</label>
+                </div>
+                <div class="input">
+                    <input type="text" id="" placeholder="Jane Doe" required value="@Model.NamePersone" asp-for="@Model.NamePersone">
+                </div>
+            </div>
+
+
+
+            <div class="input-group">
+                <div class="label">
+                    <label for="name">Email:- </label>
+                </div>
+                <div class="input">
+                    <input type="email" id="" placeholder="Email" required value="@Model.BuyerEmail" asp-for="@Model.BuyerEmail">
+                </div>
+            </div>
+
+
+            <div class="input-group">
+                <div class="label">
+                    <label for="name">Address</label>
+                </div>
+                <div class="input">
+                    <input type="text" placeholder="Country-City-Streat" required value="@Model.ShippingAddress" asp-for="@Model.ShippingAddress">
+                </div>
+            </div>
+
+
+            <div class="input-group">
+            <button class="main-btn">Create Order</button>
+            </div>
+
+
+        </form>
+    </section>
+</main>

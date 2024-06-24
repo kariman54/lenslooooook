@@ -1,0 +1,95 @@
+﻿@model ModelLoginAndRegister
+@{
+    ViewData["Title"] = "Register";
+}
+@{
+    Layout = "_LayoutForLoginAndRegister";
+}
+
+<link rel="stylesheet" href="~/css/JoinAsDoctor.css" />
+
+
+<!-- Sign Up -->
+<div class="container doc_regester">
+    <h1 class="mb-5">Sign Up</h1>
+    <div id="errorAlert"
+         class="alert alert-danger error-alert"
+         role="alert">
+        <span class="close-btn">&times;</span>
+        <div class="error-message">
+            <!-- Error messages will appear here -->
+            <div><i class="fa-solid fa-triangle-exclamation"></i></div>
+        </div>
+    </div>
+    <form asp-action="Register" asp-controller="account" method="post" enctype="multipart/form-data">
+        <div class="row mb-3">
+            <label asp-for="ModelRegister.FirstName" class="col-sm-2 col-form-label">First Name:</label>
+            <div class="col-sm-9">
+                <input asp-for="ModelRegister.FirstName" class="form-control" required />
+                <span asp-validation-for="ModelRegister.FirstName" class="text-danger"></span>
+            </div>
+        </div>
+
+
+
+        <div class="row mb-3">
+            <label asp-for="ModelRegister.LastName" class="col-sm-2 col-form-label">Last Name:</label>
+            <div class="col-sm-9">
+                <input asp-for="ModelRegister.LastName" class="form-control" required />
+                <span asp-validation-for="ModelRegister.LastName" class="text-danger"></span>
+            </div>
+        </div>
+
+
+        <div class="row mb-3">
+            <label asp-for="ModelRegister.Email" class="col-sm-2 col-form-label">Email Address:</label>
+            <div class="col-sm-9">
+                <input asp-for="ModelRegister.Email"
+                       class="form-control"
+                       required />
+                <span asp-validation-for="ModelRegister.Email" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label asp-for="ModelRegister.DateOfBirth" class="col-sm-2 col-form-label">Date of Birth</label>
+            <div class="col-sm-9">
+                <input asp-for="ModelRegister.DateOfBirth" type="date" class="form-control" required>
+                <span asp-validation-for="ModelRegister.DateOfBirth" class="text-danger"></span>
+            </div>
+        </div>
+
+
+        <div class="row mb-3">
+            <label asp-for="ModelRegister.Password" class="col-sm-2 col-form-label" id="reg_password">Password:</label>
+            <div class="col-sm-9">
+                <input asp-for="ModelRegister.Password" class="form-control" type="password" id="reg_password" required />
+                <span asp-validation-for="ModelRegister.Password" class="text-danger"></span>
+                <small class="form-text password-terms">
+                    <ul styel="color: white">
+                        <li>
+                            Password must be at least 8 characters long
+                        </li>
+                        <li>
+                            contain an uppercase
+                            letter, a lowercase letter, a number, and a special character.
+                        </li>
+                    </ul>
+                </small>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label asp-for="ModelRegister.ConfirmPassword" class="col-sm-2 col-form-label">Confirm Password:</label>
+            <div class="col-sm-9">
+                <input asp-for="ModelRegister.ConfirmPassword" type="password"
+                       id="confirmPassword"
+                       class="form-control"
+                       required />
+                <span asp-validation-for="ModelRegister.ConfirmPassword" class="text-danger"></span>
+            </div>
+        </div>
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <button type="submit" class="btn main-btn">Register</button>
+    </form>
+</div>

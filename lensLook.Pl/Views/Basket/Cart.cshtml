@@ -1,0 +1,197 @@
+﻿@model BasketCustomer
+@inject IOrderService _OrderServices;
+@inject IRequestServices _Request;
+
+@{
+    var UserId = User.FindFirstValue(claimType: ClaimTypes.NameIdentifier);
+
+    Layout = "_LayoutWithAuth";
+}
+
+@section Linkedcss{
+    <style>
+/*         :root {
+            --myblue: #033373;
+            --mylight: #17b8da;
+            --mywhite: white;
+            --mylightblue: #03347310;
+            --mydoctorblue: #03347377;
+            --transition: 0.3s ease-in-out;
+            --animation: left_right 2s ease-in-out;
+            --bottom_up: bottomUp 2s ease-in-out forwards;
+            --left_right: left_right 2s ease-in-out forwards;
+            --my_shadow: 0px 0px 15px -5px var(--myblue);
+        } */
+        .container.py-5 {
+            max-width: none !important;
+        }
+    </style>
+
+}
+
+
+
+
+
+
+
+<section class="h-100 gradient-custom">
+
+
+
+
+    <div class="container py-5">
+        <div class="row d-flex justify-content-center my-4">
+
+            <div class="col-md-8 ">
+
+                <div class="d-flex justify-content-between">
+                    @{
+                        if (_OrderServices.GetOrdersForUser(UserId).Count() > 0)
+                        {
+                            <a class="btn main-btn mb-2"  asp-action="AllOrderForUser" asp-controller="Order">orders </a>
+                        }
+
+
+                        if (_Request.GetServicesByUser(UserId).Count() > 0)
+                        {
+                            <a class="btn main-btn mb-2" asp-action="AllBookingForUser" asp-controller="Booking">Booking </a>
+                        }
+
+
+                    }
+
+                    </di>
+                </div>
+
+                @if (@Model.BasketItems.Count() > 0)
+                {
+                    <div class="card mb-4">
+                        <div class="card-header py-3" style="color:#033373">
+                            <h5 class="mb-0">Cart - @Model.BasketItems.Count() items</h5>
+                        </div>
+
+
+                        <div class="card-body">
+                            <!-- Single item -->
+                            @foreach (var item in Model.BasketItems)
+                            {
+
+
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                                        <!-- Image -->
+                                        <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
+                                            @if(@item.Photo.ToLower().StartsWith("https://") || @item.Photo.ToLower().StartsWith("http://"))
+                                                            {
+                                                <img class="product-image mb-3" src="@item.Photo">
+                                            }
+                                            else
+                                            {
+                                                <img class="product-image mb-3" src="~/files/ProductImage/@item.Photo">
+                                            }
+                                            
+                                            <img src="@item.Photo"
+                                                 class="w-100" alt="@item.Name" />
+                                            <a href="#!">
+                                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                                            </a>
+                                        </div>
+                                        <!-- Image -->
+                                    </div>
+
+                                    <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
+                                        <!-- Data -->
+                                        <p style="color: #033373"><strong>@item.Name</strong></p>
+                                        <p><span style="color: #033373">Color:</span> blue</p>
+                                        <p><span style="color: #033373">Size:</span> M</p>
+                                        <a asp-action="RemoveProductFromBasket" asp-controller="Basket" asp-route-Id="@item.Productid" type="button" data-mdb-button-init data-mdb-ripple-init style="background-color: #033373; color:#fff" class="btn   btn-sm me-1 mb-2" data-mdb-tooltip-init
+                                           title="Remove item">
+                                            <i class="fas fa-trash "></i>
+                                        </a>
+
+                                        <!-- Data -->
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                                        <!-- Quantity -->
+                                        <div class="d-flex mb-4" style="max-width: 300px">
+                                            <a asp-action="LessProductFromBasket" asp-controller="Basket" asp-route-Id="@item.Productid" data-mdb-button-init data-mdb-ripple-init class="btn px-3 me-2" style="background-color:#17b8da; color:#fff"
+                                               onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                                                <i class="fas fa-minus"></i>
+                                            </a>
+
+                                            <div data-mdb-input-init class="form-outline">
+                                                <input id="form1" min="0" name="quantity" value="@item.Quantity" type="number" class="text-center form-control " disabled />
+                                                @* <label class="form-label" for="form1">Quantity</label> *@
+                                            </div>
+
+                                            <a asp-action="IncrementProductFromBasket" asp-controller="Basket" asp-route-Id="@item.Productid" data-mdb-button-init data-mdb-ripple-init class="btn px-3 ms-2" style="background-color: #033373; color:#fff"
+                                               onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                                                <i class="fas fa-plus"></i>
+                                            </a>
+                                        </div>
+                                        <!-- Quantity -->
+                                        <!-- Price -->
+                                        <p class="text-start text-md-center">
+                                            <strong>@(@item.price * @item.Quantity)</strong>
+                                        </p>
+                                        <!-- Price -->
+                                    </div>
+                                </div>
+                                <!-- Single item -->
+
+                                <hr class="my-4" />
+
+                            }
+
+
+
+                            <!-- Single item -->
+                            <!-- Single item -->
+                        </div>
+
+                    </div>
+                }
+
+
+
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-header py-3">
+                        <h5 class="mb-0" style="color: #033373">Summary</h5>
+                    </div>
+                    <div class="card-body" >
+                        <ul class="list-group list-group-flush" >
+                            <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0" style="color: #033373">
+                                Products
+                                <span >@Model.TotalPrice</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center px-0" style="color: #033373">
+                                Shipping
+                                <span >Gratis</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                                <div>
+                                    <strong style="color:#033373">Total amount</strong>
+                                    <strong style="color:#17b8da">
+                                        <p class="mb-0">(including VAT)</p>
+                                    </strong>
+                                </div>
+                                <span style="color: #033373"><strong>@Model.TotalPrice</strong></span>
+                            </li>
+                        </ul>
+
+                        @if (Model.BasketItems.Count > 0)
+                        {
+                            <a class="main-btn" asp-controller="Order" asp-action="CreateOrder" asp-route-BasketCustomer="@Model.Id" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg btn-block">
+                                Go to checkout
+                            </a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
